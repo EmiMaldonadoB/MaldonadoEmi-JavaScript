@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(255, 255, 255);
+    margin: 0%;
+    padding: 0%;
+}
+
+.navBotonera {
+    background-color: rgba(255, 145, 0, 0.7);
+    height: 15vh;
+}
+
+.tituloPsInsumos{
+    font-size: 30px;
+    text-decoration: none;
+    color: rgb(161, 203, 240);
+    padding-left: 30px;
+}
+
+.tituloPsInsumos:hover{
+    font-size: 40px;
+    text-decoration: none;
+    color: rgb(3, 3, 3);
+}
+
+.botonNav:hover{
+    color: aqua;
+}
