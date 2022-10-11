@@ -19,71 +19,73 @@ function login () {
 login();
 
 
-//  Funcion Compras 
+//  Declaro array objetos 
 
-function compra () {
-    producto = prompt ("Que deseas comprar? \n 1-Alcohol \n 2-Barbijo \n 3-Guantes/latex \n 4-Mascara Facial \n 5-Aromatizante \n X-Para Finalizar pedido");
-    return producto;
+const productos = [
+    {nombre: "Alcohol", precio: 100},
+    {nombre: "Barbijo", precio: 200},
+    {nombre: "Guantes", precio: 150},
+    {nombre: "Mascara Facial", precio: 300},
+    {nombre: "Aromatizantes", precio: 250},
+]
+
+// Declaro array de carrito
+let carrito = []
+
+let seleccion = prompt("Deseas comprar un producto? Si / No")
+
+if(seleccion != "No"){
+    alert("Esta es nuestra lista de Productos")
+    let todosProductos = productos.map((productos) => productos.nombre + " $" + productos.precio)
+    alert(todosProductos.join(" \n"))
+}   else  {
+    alert("Muchas gracias por su visita")
 }
 
-let totalPedido = 0;
+while (seleccion != "No"){
+    let producto = prompt("Agrega un producto a tu carrito")
+    let precio = 0
 
-// Switch para sumar productos al carrito
-function funCompra() {
-    while (producto != "X" && producto != "x"){
 
-        switch (producto) {
-            case "1":
-            alert ("Seleccionaste Alcohol $250");
-            totalPedido = totalPedido + 250;
-            break;
-            case "2":
-            alert ("Seleccionaste Barbijo $100");
-            totalPedido = totalPedido + 100;
-            break;
-            case "3":
-            alert ("Seleccionaste Guantes/latex $500");
-            totalPedido = totalPedido + 500;
-            break;
-            case "4":
-            alert ("Seleccionaste Mascara Facial $300");
-            totalPedido = totalPedido + 300;
-            break;
-            case "5":
-            alert ("Seleccionaste Aromatizante $550");
-            totalPedido = totalPedido + 550;
-            break;
-
-        default:
-            alert ("La opcion ingresada no es válida")
-            break;
+if (producto == "Alcohol" || producto == "Barbijo" || producto == "Guantes" || producto == "Mascara Facial" || producto == "Aromatizantes") {
+        switch(producto) {
+            case "Alcohol":
+                precio = 100;
+                break;
+            case "Barbijo":
+                precio = 200;
+                break;
+            case "Guantes":
+                precio = 150;
+                break;
+            case "Mascara Facial":
+                precio = 300;
+                break;
+            case "Aromatizantes":
+                precio = 250;
+                break;
+            default:
+                break;
         }
-        compra();
+
+    let unidades = parseInt(prompt("Cuantas unidades deseas?"))
+    carrito.push({producto, unidades, precio})
+    } else {
+        alert("El producto ingresado no existe")
     }
-    return totalPedido;
-}
 
-    compra ();
-    funCompra();
+    seleccion = prompt("Desea agregar algo mas? Si / No")
 
-    alert (`El total de tu pedido es $${totalPedido}`);
-
-    function finalizar () {
-    let terminar = prompt ("1-Desea agregar algo nuevo al pedido? \n2-Finalizar compra");
-
-    if (terminar == 1) {
-        compra ();
-        funCompra();
-        alert (`El total de tu pedido es $${totalPedido}`);
-
-    } else   {
-        alert ("Gracias por su compra")
+    while (seleccion == "No") {
+        alert("Gracias Por Su Compra");
+        carrito.forEach((carritoTotal) => {
+            console.log(`Producto: ${carritoTotal.producto}, Unidades: ${carritoTotal.unidades}, Total a pagar por producto: ${carritoTotal.unidades * carritoTotal.precio}`);
+        })
+        break;
     }
 }
 
-    
-// compra ();
-// funCompra();
-finalizar();
 
-alert (`El total de tu pedido es $${totalPedido} . GRACIAS POR SU COMPRA`);
+const total = carrito.reduce((acc, el) => acc + el.precio * el.unidades, 0);
+alert(`El total de su compra es: ${total} ` )
+
