@@ -1,27 +1,180 @@
+
 body{
-    background-color: rgb(255, 255, 255);
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(10, 10, 10, 0.3);
+    
 }
 
-.navBotonera {
-    background-color: rgba(255, 145, 0, 0.7);
-    height: 15vh;
+.navbarCarrito{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    background: rgb(208,83,11);
+    background: linear-gradient(0deg, rgba(208,83,11,0.6839110644257703) 0%, rgba(245,245,245,0.9668242296918768) 100%);
+    -webkit-box-shadow: 0px 0px 16px 5px rgba(0,0,0,0.53);
+    -moz-box-shadow: 0px 0px 16px 5px rgba(0,0,0,0.53);
+    box-shadow: 0px 0px 16px 5px rgba(0,0,0,0.53);
 }
 
-.tituloPsInsumos{
+.tituloAutoser{
     font-size: 30px;
-    text-decoration: none;
-    color: rgb(161, 203, 240);
-    padding-left: 30px;
+    font-weight: bolder;
+    color: black;
 }
 
-.tituloPsInsumos:hover{
-    font-size: 40px;
-    text-decoration: none;
-    color: rgb(3, 3, 3);
+.verCarrito{
+    width: 10vw;
+    height: 5vh;
+    color: white;
+    font-size: 20px;
+    background-color: black;
+    margin-right: 20px;
+    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    
 }
 
-.botonNav:hover{
-    color: aqua;
+.botonCarrito:hover{
+    opacity: 0.7;
+}
+
+.contenidoCompras{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 40px;
+}
+
+
+/* agregue estilo a las cartas */
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 250px;
+    margin: 15px;
+    width: 50vh;
+    background-color: white;
+    
+    height: auto;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 16px 5px rgba(0,0,0,0.53);
+    -moz-box-shadow: 0px 0px 16px 5px rgba(0,0,0,0.53);
+    box-shadow: 0px 0px 16px 5px rgba(0,0,0,0.53);
+    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+
+}
+
+.precioProducto{
+    font-size: 20px;
+    color: black;
+    
+}
+
+.nombreProducto{
+    color: black;
+    padding: 5px;
+}
+
+.nombreProductos{
+    color: white;
+   
+}
+
+
+
+.card img{
+    width: 20vh;
+    height: 10vw;
+    margin: 5px;
+}
+
+.card button{
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: white;
+    background-color: black;
+    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+}
+
+.card button:hover{
+    opacity: 0.7;
+}
+
+.modalContainer{
+    width: 80%;
+    max-height: 90vh;
+    margin-left: 110px;
+    color: white;
+    background-color: black;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    overflow: auto;
+    top: 12vh;
+    z-index: 9;
+
+}
+
+.modalHeader{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    padding: 20px;
+    background: rgb(208,83,11);
+    background: linear-gradient(0deg, rgba(208,83,11,0.6839110644257703) 0%, rgba(245,245,245,0.9668242296918768) 100%);
+}
+
+.modalHeaderBoton{
+    display: flex;
+    color: red;
+    padding-right: 10px;
+    font-size: 45px;
+    cursor: pointer;
+}
+
+.modalContent{
+    width: 90%;
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modalContainer > .carritoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    margin: 10px;
+}
+
+.modalContainer > div > img {
+    width: 120px;
+    height: 120px;
+    opacity: 0.7;
+}
+
+.totalContent {
+    font-size: 35px;
+    padding: 20px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.eliminarProducto{
+    cursor: pointer;
 }
